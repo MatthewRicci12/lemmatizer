@@ -12,49 +12,55 @@ public class The_Main {
 	private static HashMap<String, Word.POS> context_search(String word, Word.POS pos_of_last_word, ArrayList<Word> Nouns, ArrayList<Word> Verbs, ArrayList<Word> Adjectives, ArrayList<Word> Pronouns, ArrayList<Word> Auxiliaries, ArrayList<Word> Determiners, ArrayList<Word> Adverbs, ArrayList<Word> Prepositions, ArrayList<Word> DegreeAdvs, ArrayList<Word> Conjunctions, ArrayList<Word> Demonstratives) {
 		HashMap<String, Word.POS> word_information = new HashMap<String, Word.POS>();
 		
-		//Also if comma before
-		
-		
 		if (pos_of_last_word == Word.POS.Noun) {
+			System.out.println("Searching through verb list...");
 			for (Word Verb : Verbs) {
-				System.out.println("Searching through verb list...");
 				if (word.equals(Verb.name) || Verb.lexemes.contains(word)) {
 					word_information.put(Verb.name, Word.POS.Verb);
 					return word_information;
 				} 
+				System.out.println("Searching through aux list...");
 				} for (Word Auxiliary : Auxiliaries) {
-					System.out.println("Searching through aux list...");
 					if (word.equals(Auxiliary.name) || Auxiliary.lexemes.contains(word)) {
 						word_information.put(Auxiliary.name, Word.POS.Auxiliary);
 						return word_information;
+						
+				} }
+				System.out.println("Searching through conjunction list...");
+				for (Word Conjunction : Conjunctions) {
 					
-				} } for (Word Conjunction : Conjunctions) {
-					System.out.println("Searching through conjunction list...");
 					if (word.equals(Conjunction.name) || Conjunction.lexemes.contains(word)) {
 						word_information.put(Conjunction.name, Word.POS.Conjunction);
 						return word_information;
 				}
 					
-				} for (Word Noun : Nouns) {
-					System.out.println("Searching through noun list...");
+				} 
+				System.out.println("Searching through noun list...");
+				for (Word Noun : Nouns) {
+					
 				if (word.equals(Noun.name) || Noun.lexemes.contains(word)) {
 					word_information.put(Noun.name, Word.POS.Noun);
 					return word_information;
 				} 		
-				} for (Word Adverb : Adverbs) {
-					System.out.println("Searching through adverb list...");
+				} 
+				System.out.println("Searching through adverb list...");
+				for (Word Adverb : Adverbs) {
+					
 					if (word.equals(Adverb.name) || Adverb.lexemes.contains(word)) {
 						word_information.put(Adverb.name, Word.POS.Adverb);
 						return word_information;
-				} } for (Word DegreeAdv : DegreeAdvs) {
-					System.out.println("Searching through degree adverb list...");
+				} } 
+				System.out.println("Searching through degree adverb list...");
+				for (Word DegreeAdv : DegreeAdvs) {
+					
 					if (word.equals(DegreeAdv.name) || DegreeAdv.lexemes.contains(word)) {
 						word_information.put(DegreeAdv.name, Word.POS.DegreeAdv);
 						return word_information;
 				}
 					
-				} for (Word Demonstrative : Demonstratives) {
-					System.out.println("Searching through demonstrative list...");
+				} System.out.println("Searching through demonstrative list..."); 
+				for (Word Demonstrative : Demonstratives) {
+					
 					if (word.equals(Demonstrative.name) || Demonstrative.lexemes.contains(word)) {
 						word_information.put(Demonstrative.name, Word.POS.Demonstrative);
 						return word_information;
@@ -64,63 +70,71 @@ public class The_Main {
 					
 			
 		} else if (pos_of_last_word == Word.POS.Verb) {
-			for (Word Noun : Nouns) {
-				System.out.println("Searching through noun list...");
+			System.out.println("Searching through noun list...");
+			for (Word Noun : Nouns) {	
 				if (word.equals(Noun.name) || Noun.lexemes.contains(word)) {
 					word_information.put(Noun.name, Word.POS.Noun);
 					return word_information;
 				} 
 				
-			} for (Word Determiner : Determiners) {
-				System.out.println("Searching through determiner list...");
+			} 
+			System.out.println("Searching through determiner list...");
+			for (Word Determiner : Determiners) {
 				if (word.equals(Determiner.name) || Determiner.lexemes.contains(word)) {
 					word_information.put(Determiner.name, Word.POS.Determiner);
 					return word_information;
 			}
 				
-			} for (Word Adjective : Adjectives) {
-				System.out.println("Searching through adjective list...");
+			} 
+			System.out.println("Searching through adjective list...");
+			for (Word Adjective : Adjectives) {
 				if (word.equals(Adjective.name) || Adjective.lexemes.contains(word)) {
 					word_information.put(Adjective.name, Word.POS.Adjective);
 					return word_information;
 				} 
 				
-			} for (Word Pronoun : Pronouns) {
-				System.out.println("Searching through pronoun list...");
+			} 
+			System.out.println("Searching through pronoun list...");
+			for (Word Pronoun : Pronouns) {
 				if (word.equals(Pronoun.name) || Pronoun.lexemes.contains(word)) {
 					word_information.put(Pronoun.name, Word.POS.Pronoun);
 					return word_information;
 			}
 				
-			} for (Word Adverb : Adverbs) {
-				System.out.println("Searching through adverb list...");
+			} 
+			System.out.println("Searching through adverb list...");
+			for (Word Adverb : Adverbs) {
 				if (word.equals(Adverb.name) || Adverb.lexemes.contains(word)) {
 					word_information.put(Adverb.name, Word.POS.Adverb);
 					return word_information;
 				
-			} } for (Word DegreeAdv : DegreeAdvs) {
-				System.out.println("Searching through degree adverb list...");
+			} } 
+			System.out.println("Searching through degree adverb list...");
+			for (Word DegreeAdv : DegreeAdvs) {
 				if (word.equals(DegreeAdv.name) || DegreeAdv.lexemes.contains(word)) {
 					word_information.put(DegreeAdv.name, Word.POS.DegreeAdv);
 					return word_information;
 			}
 				
-			} for (Word Preposition : Prepositions) {
-				System.out.println("Searching through preposition list...");
+			} 
+			System.out.println("Searching through preposition list...");
+			for (Word Preposition : Prepositions) {
 				if (word.equals(Preposition.name) || Preposition.lexemes.contains(word)) {
 					word_information.put(Preposition.name, Word.POS.Preposition);
 					return word_information;
 			}
 				
-			} for (Word Conjunction : Conjunctions) {
-				System.out.println("Searching through conjunction list...");
+			} 
+			System.out.println("Searching through conjunction list...");
+			for (Word Conjunction : Conjunctions) {
 				if (word.equals(Conjunction.name) || Conjunction.lexemes.contains(word)) {
 					word_information.put(Conjunction.name, Word.POS.Conjunction);
 					return word_information;
 			}
 				
-			} for (Word Demonstrative : Demonstratives) {
-				System.out.println("Searching through demonstrative list...");
+			} 
+			System.out.println("Searching through demonstrative list...");
+			for (Word Demonstrative : Demonstratives) {
 				if (word.equals(Demonstrative.name) || Demonstrative.lexemes.contains(word)) {
 					word_information.put(Demonstrative.name, Word.POS.Demonstrative);
 					return word_information;
@@ -128,42 +142,47 @@ public class The_Main {
 				
 			}
 		 } else if (pos_of_last_word == Word.POS.Adjective) {
+			 System.out.println("Searching through noun list...");
 			 for (Word Noun : Nouns) {
-					System.out.println("Searching through noun list...");
 					if (word.equals(Noun.name) || Noun.lexemes.contains(word)) {
 						word_information.put(Noun.name, Word.POS.Noun);
 						return word_information;
 					} 
 					
-				} for (Word Adjective : Adjectives) {
-					System.out.println("Searching through adjective list...");
+				} 
+			 System.out.println("Searching through adjective list...");
+			 for (Word Adjective : Adjectives) {
 					if (word.equals(Adjective.name) || Adjective.lexemes.contains(word)) {
 						word_information.put(Adjective.name, Word.POS.Adjective);
 						return word_information;
 					} 
 					
-				} for (Word Adverb : Adverbs) {
-					System.out.println("Searching through adverb list...");
+				} 
+			 System.out.println("Searching through adverb list...");
+			 for (Word Adverb : Adverbs) {
 					if (word.equals(Adverb.name) || Adverb.lexemes.contains(word)) {
 						word_information.put(Adverb.name, Word.POS.Adverb);
 						return word_information;
 					
-				} } for (Word Conjunction : Conjunctions) {
-					System.out.println("Searching through conjunction list...");
+				} } 
+			 System.out.println("Searching through conjunction list...");
+			 for (Word Conjunction : Conjunctions) {
 					if (word.equals(Conjunction.name) || Conjunction.lexemes.contains(word)) {
 						word_information.put(Conjunction.name, Word.POS.Conjunction);
 						return word_information;
 				}
 					
-				} for (Word Preposition : Prepositions) {
-					System.out.println("Searching through preposition list...");
+				} 
+			 System.out.println("Searching through preposition list...");
+			 for (Word Preposition : Prepositions) {
 					if (word.equals(Preposition.name) || Preposition.lexemes.contains(word)) {
 						word_information.put(Preposition.name, Word.POS.Preposition);
 						return word_information;
 				}
 					
-				} for (Word Demonstrative : Demonstratives) {
-					System.out.println("Searching through demonstrative list...");
+				} 
+			 System.out.println("Searching through demonstrative list...");
+			 for (Word Demonstrative : Demonstratives) {
 					if (word.equals(Demonstrative.name) || Demonstrative.lexemes.contains(word)) {
 						word_information.put(Demonstrative.name, Word.POS.Demonstrative);
 						return word_information;
@@ -171,21 +190,23 @@ public class The_Main {
 					
 				}
 		} else if (pos_of_last_word == Word.POS.Pronoun) {
+			System.out.println("Searching through verb list...");
 			for (Word Verb : Verbs) {
-				System.out.println("Searching through verb list...");
 				if (word.equals(Verb.name) || Verb.lexemes.contains(word)) {
 					word_information.put(Verb.name, Word.POS.Verb);
 					return word_information;
 				} 
 				
-			} for (Word Auxiliary : Auxiliaries) {
-				System.out.println("Searching through auxiliary list...");
+			} 
+			System.out.println("Searching through auxiliary list...");
+			for (Word Auxiliary : Auxiliaries) {
 				if (word.equals(Auxiliary.name) || Auxiliary.lexemes.contains(word)) {
 					word_information.put(Auxiliary.name, Word.POS.Auxiliary);
 					return word_information;
 				
-			} } for (Word Adverb : Adverbs) {
-				System.out.println("Searching through adverb list...");
+			} } 
+			System.out.println("Searching through adverb list...");
+			for (Word Adverb : Adverbs) {
 				if (word.equals(Adverb.name) || Adverb.lexemes.contains(word)) {
 					word_information.put(Adverb.name, Word.POS.Adverb);
 					return word_information;
@@ -194,8 +215,8 @@ public class The_Main {
 			
 			
 		} else if (pos_of_last_word == Word.POS.Auxiliary) {
+			System.out.println("Searching through verb list...");
 			for (Word Verb : Verbs) {
-				System.out.println("Searching through verb list...");
 				if (word.equals(Verb.name) || Verb.lexemes.contains(word)) {
 					word_information.put(Verb.name, Word.POS.Verb);
 					return word_information;
@@ -204,15 +225,16 @@ public class The_Main {
 			}
 			
 		} else if (pos_of_last_word == Word.POS.Adverb) {
+			System.out.println("Searching through verb list...");
 			for (Word Verb : Verbs) {
-				System.out.println("Searching through verb list...");
 				if (word.equals(Verb.name) || Verb.lexemes.contains(word)) {
 					word_information.put(Verb.name, Word.POS.Verb);
 					return word_information;
 				} 
 				
-			} for (Word Adjective : Adjectives) {
-				System.out.println("Searching through adjective list...");
+			} 
+			System.out.println("Searching through adjective list...");
+			for (Word Adjective : Adjectives) {
 				if (word.equals(Adjective.name) || Adjective.lexemes.contains(word)) {
 					word_information.put(Adjective.name, Word.POS.Adjective);
 					return word_information;
@@ -222,15 +244,16 @@ public class The_Main {
 			
 			
 		} else if (pos_of_last_word == Word.POS.Determiner) {
+			System.out.println("Searching through noun list...");
 			for (Word Noun : Nouns) {
-				System.out.println("Searching through noun list...");
 				if (word.equals(Noun.name) || Noun.lexemes.contains(word)) {
 					word_information.put(Noun.name, Word.POS.Noun);
 					return word_information;
 				} 
 				
-			} for (Word Adjective : Adjectives) {
-				System.out.println("Searching through adj list...");
+			} 
+			System.out.println("Searching through adj list...");
+			for (Word Adjective : Adjectives) {
 				if (word.equals(Adjective.name) || Adjective.lexemes.contains(word)) {
 					word_information.put(Adjective.name, Word.POS.Adjective);
 					return word_information;
@@ -240,22 +263,24 @@ public class The_Main {
 			
 			
 		} else if (pos_of_last_word == Word.POS.Preposition) {
+			System.out.println("Searching through determiner list...");
 			for (Word Determiner : Determiners) {
-				System.out.println("Searching through determiner list...");
 				if (word.equals(Determiner.name) || Determiner.lexemes.contains(word)) {
 					word_information.put(Determiner.name, Word.POS.Determiner);
 					return word_information;
 			}
 				
-			} for (Word Adjective : Adjectives) {
-				System.out.println("Searching through adjective list...");
+			} 
+			System.out.println("Searching through adjective list...");
+			for (Word Adjective : Adjectives) {
 				if (word.equals(Adjective.name) || Adjective.lexemes.contains(word)) {
 					word_information.put(Adjective.name, Word.POS.Adjective);
 					return word_information;
 				} 
 				
-			} for (Word Noun : Nouns) {
-				System.out.println("Searching through noun list...");
+			} 
+			System.out.println("Searching through noun list...");
+			for (Word Noun : Nouns) {
 				if (word.equals(Noun.name) || Noun.lexemes.contains(word)) {
 					word_information.put(Noun.name, Word.POS.Noun);
 					return word_information;
@@ -265,14 +290,17 @@ public class The_Main {
 			
 			
 		} else if (pos_of_last_word == Word.POS.DegreeAdv) {
+			
+			System.out.println("Searching through adjective list...");
 			for (Word Adjective : Adjectives) {
-				System.out.println("Searching through adjective list...");
 				if (word.equals(Adjective.name) || Adjective.lexemes.contains(word)) {
 					word_information.put(Adjective.name, Word.POS.Adjective);
 					return word_information;
 				} 
 				
-			} for (Word Adverb : Adverbs) {
+			} 
+			
+			for (Word Adverb : Adverbs) {
 				System.out.println("Searching through adverb list...");
 				if (word.equals(Adverb.name) || Adverb.lexemes.contains(word)) {
 					word_information.put(Adverb.name, Word.POS.Adverb);
@@ -282,42 +310,47 @@ public class The_Main {
 			
 			
 		} else if (pos_of_last_word == Word.POS.Conjunction) {
+			System.out.println("Searching through determiner list...");
 			for (Word Determiner : Determiners) {
-				System.out.println("Searching through determiner list...");
 				if (word.equals(Determiner.name) || Determiner.lexemes.contains(word)) {
 					word_information.put(Determiner.name, Word.POS.Determiner);
 					return word_information;
 			}
 				
-			} for (Word Adjective : Adjectives) {
-				System.out.println("Searching through adjective list...");
+			} 
+			System.out.println("Searching through adjective list...");
+			for (Word Adjective : Adjectives) {
 				if (word.equals(Adjective.name) || Adjective.lexemes.contains(word)) {
 					word_information.put(Adjective.name, Word.POS.Adjective);
 					return word_information;
 				} 
 				
-			} for (Word Noun : Nouns) {
-				System.out.println("Searching through noun list...");
+			} 
+			System.out.println("Searching through noun list...");
+			for (Word Noun : Nouns) {
 				if (word.equals(Noun.name) || Noun.lexemes.contains(word)) {
 					word_information.put(Noun.name, Word.POS.Noun);
 					return word_information;
 				} 
 				
-			} for (Word Preposition : Prepositions) {
-				System.out.println("Searching through preposition list...");
+			} 
+			System.out.println("Searching through preposition list...");
+			for (Word Preposition : Prepositions) {
 			if (word.equals(Preposition.name) || Preposition.lexemes.contains(word)) {
 				word_information.put(Preposition.name, Word.POS.Preposition);
 				return word_information;
 			}
 			
-			} for (Word Adverb : Adverbs) {
-				System.out.println("Searching through adverb list...");
+			} 
+			System.out.println("Searching through adverb list...");
+			for (Word Adverb : Adverbs) {
 			if (word.equals(Adverb.name) || Adverb.lexemes.contains(word)) {
 				word_information.put(Adverb.name, Word.POS.Adverb);
 				return word_information;
 			
-			} } for (Word DegreeAdv : DegreeAdvs) {
-				System.out.println("Searching through degree adverb list...");
+			} } 
+			System.out.println("Searching through degree adverb list...");
+			for (Word DegreeAdv : DegreeAdvs) {
 			if (word.equals(DegreeAdv.name) || DegreeAdv.lexemes.contains(word)) {
 				word_information.put(DegreeAdv.name, Word.POS.DegreeAdv);
 				return word_information;
@@ -327,15 +360,16 @@ public class The_Main {
 			
 			
 		} else if (pos_of_last_word == Word.POS.Demonstrative) {
+			System.out.println("Searching through verb list...");
 			for (Word Verb : Verbs) {
-				System.out.println("Searching through verb list...");
 				if (word.equals(Verb.name) || Verb.lexemes.contains(word)) {
 					word_information.put(Verb.name, Word.POS.Verb);
 					return word_information;
 				} 
 				
-			} for (Word Auxiliary : Auxiliaries) {
-				System.out.println("Searching through auxiliary list...");
+			} 
+			System.out.println("Searching through auxiliary list...");
+			for (Word Auxiliary : Auxiliaries) {
 				if (word.equals(Auxiliary.name) || Auxiliary.lexemes.contains(word)) {
 					word_information.put(Auxiliary.name, Word.POS.Auxiliary);
 					return word_information;
@@ -358,65 +392,83 @@ public class The_Main {
 		System.out.println("Performing brute force search...");
 		{
 			
+		System.out.println("Searching through noun list...");
 		for (Word Noun : Nouns) {
 			if (word.equals(Noun.name) || Noun.lexemes.contains(word)) {
 				word_information.put(Noun.name, Word.POS.Noun);
 				return word_information;
 			} 
-			
-		} for (Word Verb : Verbs) {
+		} 
+		System.out.println("Searching through verb list...");
+		for (Word Verb : Verbs) {
 			if (word.equals(Verb.name) || Verb.lexemes.contains(word)) {
 				word_information.put(Verb.name, Word.POS.Verb);
 				return word_information;
 			} 
-			
-		} for (Word Adjective : Adjectives) {
+		} 
+		System.out.println("Searching through adjective list...");	
+		for (Word Adjective : Adjectives) {
 			if (word.equals(Adjective.name) || Adjective.lexemes.contains(word)) {
 				word_information.put(Adjective.name, Word.POS.Adjective);
 				return word_information;
 			} 
-			
-		} for (Word Pronoun : Pronouns) {
+		} 
+		System.out.println("Searching through pronoun list...");	
+		for (Word Pronoun : Pronouns) {
 			if (word.equals(Pronoun.name) || Pronoun.lexemes.contains(word)) {
 				word_information.put(Pronoun.name, Word.POS.Pronoun);
 				return word_information;
-		}
-			
-		} for (Word Auxiliary : Auxiliaries) {
+			}
+		} 
+		System.out.println("Searching through auxiliary list...");	
+		for (Word Auxiliary : Auxiliaries) {
 			if (word.equals(Auxiliary.name) || Auxiliary.lexemes.contains(word)) {
 				word_information.put(Auxiliary.name, Word.POS.Auxiliary);
 				return word_information;
-			
-		} } for (Word Adverb : Adverbs) {
+		
+		} } 
+		
+		System.out.println("Searching through adverb list...");	
+		for (Word Adverb : Adverbs) {
 			if (word.equals(Adverb.name) || Adverb.lexemes.contains(word)) {
 				word_information.put(Adverb.name, Word.POS.Adverb);
 				return word_information;
-			
-		} } for (Word Determiner : Determiners) {
+		
+		} } 
+		System.out.println("Searching through determiner list...");
+		for (Word Determiner : Determiners) {
 			if (word.equals(Determiner.name) || Determiner.lexemes.contains(word)) {
 				word_information.put(Determiner.name, Word.POS.Determiner);
 				return word_information;
 		}
 			
-		} for (Word Preposition : Prepositions) {
+		} 
+		System.out.println("Searching through preposition list...");
+		for (Word Preposition : Prepositions) {
 			if (word.equals(Preposition.name) || Preposition.lexemes.contains(word)) {
 				word_information.put(Preposition.name, Word.POS.Preposition);
 				return word_information;
 		}
 			
-		} for (Word DegreeAdv : DegreeAdvs) {
+		} 
+		System.out.println("Searching through degree adverb list...");
+		for (Word DegreeAdv : DegreeAdvs) {
 			if (word.equals(DegreeAdv.name) || DegreeAdv.lexemes.contains(word)) {
 				word_information.put(DegreeAdv.name, Word.POS.DegreeAdv);
 				return word_information;
 		}
 			
-		} for (Word Conjunction : Conjunctions) {
+		} 
+		System.out.println("Searching through conjunction list...");
+		for (Word Conjunction : Conjunctions) {
 			if (word.equals(Conjunction.name) || Conjunction.lexemes.contains(word)) {
 				word_information.put(Conjunction.name, Word.POS.Conjunction);
 				return word_information;
 		}
 			
-		} for (Word Demonstrative : Demonstratives) {
+		} 
+		System.out.println("Searching through demonstrative list...");
+		for (Word Demonstrative : Demonstratives) {
 			if (word.equals(Demonstrative.name) || Demonstrative.lexemes.contains(word)) {
 				word_information.put(Demonstrative.name, Word.POS.Demonstrative);
 				return word_information;
@@ -424,6 +476,7 @@ public class The_Main {
 			
 		}
 			}
+		System.out.println("Brute force search returned null!");
 		word_information.put(word, Word.POS.Null);
 		return word_information;
 				}
@@ -585,13 +638,14 @@ public class The_Main {
 		} else { //Text size is 1 word, skip straight to the return.
 			System.out.println("Single word input " + first_word);
 			String[] strArray = final_text.toArray(new String[final_text.size()]);
-			return Arrays.toString(strArray).substring(1, (Arrays.toString(strArray).length() - 1));
+			return String.join(" ", strArray);
 		}
 
 	
 		System.out.println("Hitting final loop");
+		//array name = final_text
 		String[] strArray = final_text.toArray(new String[final_text.size()]);
-		return Arrays.toString(strArray).substring(1, (Arrays.toString(strArray).length() - 1));
+		return String.join(" ", strArray);
 	}
 	
 	public static void main(String[] args) {
@@ -615,9 +669,11 @@ public class The_Main {
 		String user_input = scanny_boy.nextLine();
 		
 		System.out.println(lemmatize(user_input, NounMap, VerbMap, AdjMap, PronMap, AuxMap, DetMap, AdvMap, PrepMap, DegMap, ConjMap, DemMap));
+
+		 
 		
-		
-		//Later: Upper and lower case retain...just do contractions, idiot xD "Do not" is not 2 words, it's a string with a space character.
+		//Later: Upper and lower case retain
+		//Comma --> Conjunction
 	}
 
 }

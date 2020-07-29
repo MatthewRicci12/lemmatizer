@@ -74,11 +74,8 @@ public static ArrayList<Word> all_unchanging_lists(String type) {
 		}
 
 		}
-
-
-
 	
 }
 
 //			 String[] strArray = i.lexemes.toArray(new String[i.lexemes.size()]);
-//System.out.println(i.name + ' ' + Arrays.toString(strArray) + i.type);
+//System.out.println(Arrays.toString(strArray));
